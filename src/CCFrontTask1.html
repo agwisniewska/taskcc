@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CC FrontTask1</title>
+    <style>
+        body {
+            font: 16px sans-serif;
+        }
+
+        p {
+            margin: 120px 500px;
+            max-width: 300px;
+        }
+
+        .tooltip {
+            position: relative;
+            border-bottom: 2px dotted #ff5722;
+            transition: all 0.5s linear;
+        }
+
+        .tooltip::after {
+            transition: inherit;
+            opacity: 0;
+            content: "";
+            visibility: hidden;
+            position: absolute;
+            top: -13px;
+            left: 2px;
+            border: 15px solid;
+            border-color: #ff5722 transparent transparent transparent;
+        }
+
+        .tooltip::before {
+            transition: inherit;
+            opacity: 0;
+            content: "It's so cool";
+            font-weight: 100;
+            visibility: hidden;
+            width: 15em;
+            background-color: #ff5722;
+            color: #fff;
+            text-align: left;
+            border-radius: 5px;
+            line-height: 2.7;
+            position: absolute;
+            right: -97px;
+            bottom: 30px;
+            z-index: 100;
+            padding-left: 0.5em;
+        }
+
+        .tooltip:hover::before,
+        .tooltip:hover::after {
+            visibility: visible;
+            cursor: help;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<header></header>
+<main>
+    <p>This is an awesome <span class="tooltip"> tooltip </span></p>
+</main>
+<footer></footer>
+
+</body>
+</html>
